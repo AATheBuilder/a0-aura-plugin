@@ -1,3 +1,28 @@
+<html>
+<head>
+    <title>Aura: Immersive Backgrounds</title>
+    <!-- Import the aura store module following A0 conventions -->
+    <script type="module" src="/plugins/aura_plugin/webui/aura-store.js"></script>
+</head>
+<body>
+
+<div x-data>
+    <!-- Store Gating Template: Ensures Alpine.js store is available before rendering -->
+    <template x-if="$store.auraStore">
+        <div 
+            id="aura-background-container" 
+            x-init="$store.auraStore.onOpen()" 
+            x-destroy="$store.auraStore.cleanup()"
+            aria-hidden="true"
+            :class="{ 'agent-thinking': $store.auraStore.isThinking }"
+        >
+            <div class="aura-blob aura-blob-1"></div>
+            <div class="aura-blob aura-blob-2"></div>
+            <div class="aura-blob aura-blob-3"></div>
+        </div>
+    </template>
+</div>
+
 <style>
   /* Aura Layer - Fixed behind everything */
   #aura-background-container {
@@ -10,7 +35,7 @@
     overflow: hidden;
     background: var(--color-background);
     pointer-events: none;
-    transition: background 0.8s ease;
+    transition: background 0.8s ease, opacity 0.5s ease;
   }
 
   .aura-blob {
@@ -23,7 +48,6 @@
     will-change: transform, opacity;
   }
 
-  /* Specific Blob Positions and Animations */
   .aura-blob-1 {
     width: 50vw;
     height: 50vw;
@@ -52,8 +76,8 @@
     animation: aura-drift-3 45s infinite alternate ease-in-out;
   }
 
-  /* Soft pulse for active state */
-  body.agent-thinking .aura-blob {
+  /* React to 'agent-thinking' class toggle via Alpine */
+  #aura-background-container.agent-thinking .aura-blob {
     opacity: 0.22;
     filter: blur(60px);
     animation-duration: 10s !important;
@@ -74,7 +98,7 @@
     100% { transform: translate(-10%, 10%) scale(1.2); }
   }
 
-  /* Glassmorphic Panel Overrides for enhanced depth */
+  /* Subtle glassmorphic panel enhancements */
   .panel, .sidebar-shell, #app-topbar {
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
@@ -83,22 +107,5 @@
   }
 </style>
 
-<script type="module">
-  const initAura = () => {
-    // We can add reactive logic here if Alpine stores are available
-    // For now, pure CSS motion provides the bulk of the experience
-    console.log("🌌 Aura: Immersive Background active.");
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAura);
-  } else {
-    initAura();
-  }
-</script>
-
-<div id="aura-background-container" aria-hidden="true">
-  <div class="aura-blob aura-blob-1"></div>
-  <div class="aura-blob aura-blob-2"></div>
-  <div class="aura-blob aura-blob-3"></div>
-</div>
+</body>
+</html>
