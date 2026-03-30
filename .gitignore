@@ -1,0 +1,16 @@
+# AgentZero Plugin Artifacts
+.toggle-0
+.toggle-1
+config.json
+default_config.yaml
+
+# OS Specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Common Ignores
+node_modules/
+dist/
+build/
+.git/
