@@ -1,21 +1,32 @@
-# Aura: Immersive Backgrounds for AgentZero
+# 🌌 Aura: Immersive Backgrounds for AgentZero
 
-🌌 **Aura** transforms the static AgentZero workspace into a fluid, living environment with high-performance, theme-aware motion backgrounds.
+**Aura** is a premium aesthetic plugin that transforms the static AgentZero workspace into a living, fluid environment. 
 
-![Aura Preview](webui/thumbnail.png)
+Inspired by modern glassmorphic design, Aura adds theme-aware motion backgrounds that react to the agent's state, providing a deeply immersive and premium feel to your AI interactions.
 
-## Features
+![Aura Thumbnail](thumbnail.jpg)
 
-- **Liquid Glass Motion**: Subtle, glassmorphic blobs that drift and evolve in the background.
-- **Theme Awareness**: Automatically inherits colors (Accent, Primary, Background) from your active **Persona** theme.
-- **State Reactive**: Background intensity and motion speed adapt to the Agent's "Thinking" and "Idle" states.
-- **Zero Friction**: High-performance CSS animations ensure 60fps motion with minimal CPU impact.
+## 🌟 Features
 
-## Installation
+- **Fluid Motion**: High-performance, GPU-accelerated CSS animations that create a "breathing" workspace.
+- **Theme-Aware**: Automatically inherits your AgentZero theme colors (Accent, Primary, Secondary) for perfect visual harmony.
+- **Reactive States**: Background intensity and motion speed increase when the agent is "thinking" or processing tasks.
+- **Glassmorphic Depth**: Enhances the existing UI with subtle backdrop blurs and transparent layers.
+- **Native Integration**: Built using AgentZero's Alpine.js store pattern for a lightweight and flicker-free experience.
 
-1. Clone or download this repository into your AgentZero `plugins/` or `usr/plugins/` directory.
-2. Enable **Aura** from the AgentZero Plugins dashboard.
-3. Enjoy a more immersive, premium workspace.
+## 🚀 Installation
 
----
-*Part of the Premium AgentZero Plugin Suite by AATheBuilder.*
+1. Install via the **AgentZero Plugin Hub**.
+2. Or, clone this repository directly into your `usr/plugins/` directory:
+   ```bash
+   git clone https://github.com/AATheBuilder/a0-aura-plugin.git aura_plugin
+   ```
+3. Enable "Aura" in **Settings → Plugins**.
+4. Refresh the page!
+
+## 🛠️ Requirements
+- AgentZero version with Plugin Support.
+- A modern browser with hardware acceleration enabled for optimal performance.
+
+## 📄 License
+MIT
